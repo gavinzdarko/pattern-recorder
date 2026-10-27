@@ -5,7 +5,9 @@ if [[ -d /Applications/Xcode.app/Contents/Developer ]]; then export DEVELOPER_DI
 export CLANG_MODULE_CACHE_PATH="$PWD/.build/cache"
 export SWIFTPM_MODULECACHE_OVERRIDE="$PWD/.build/cache"
 xcrun swift build -c release --disable-sandbox
-APP="$PWD/dist/Pattern Recorder.app"
+PATTERN_RECORDER_DESTINATION="${PATTERN_RECORDER_OUTPUT_DIR:-$PWD/dist}"
+mkdir -p "$PATTERN_RECORDER_DESTINATION"
+APP="$PATTERN_RECORDER_DESTINATION/Pattern Recorder.app"
 # Recreate generated bundle so old Finder metadata/signatures cannot break repeat builds.
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS"

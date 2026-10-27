@@ -14,7 +14,9 @@ cd pattern-recorder
 open "dist/Pattern Recorder.app"
 ```
 
-For stable permissions/login behavior, copy the bundle to `/Applications` before granting consent, then open it there. The build script signs ad hoc by default; it does not notarize or install anything. For a stable Developer ID signature, run `SIGN_IDENTITY="Developer ID Application: …" ./scripts/build.sh` with your own installed certificate. Rebuilding an ad-hoc binary can invalidate existing TCC consent; remove/re-add the final bundle in the privacy panes if needed. Do not disable macOS security protections. If Gatekeeper refuses a downloaded build, build from inspected source or use a properly Developer-ID-signed/notarized release; this repository does not supply one.
+For stable permissions/login behavior, copy the bundle to `/Applications` before granting consent, then open it there. If your checkout is in a managed/File Provider folder and Finder metadata invalidates the bundle signature after building, use `PATTERN_RECORDER_OUTPUT_DIR=/private/tmp/pattern-recorder-native-build ./scripts/build.sh`, then open that output bundle. The output-folder option changes generated build artifacts only, never recording storage.
+
+The build script signs ad hoc by default; it does not notarize or install anything. For a stable Developer ID signature, run `SIGN_IDENTITY="Developer ID Application: …" ./scripts/build.sh` with your own installed certificate. Rebuilding an ad-hoc binary can invalidate existing TCC consent; remove/re-add the final bundle in the privacy panes if needed. Do not disable macOS security protections. If Gatekeeper refuses a downloaded build, build from inspected source or use a properly Developer-ID-signed/notarized release; this repository does not supply one.
 
 The pause-circle **OFF** icon appears in the **right-hand system menu bar**, alongside status icons such as Wi-Fi/battery, with no Dock icon. Click it to open controls. macOS/user controls exact ordering; crowded/notched menu bars can hide icons. It is not a browser/webpage or the left application menu.
 
