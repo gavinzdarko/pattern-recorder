@@ -1,0 +1,7 @@
+{"schema":1,"synthetic":true,"kind":"boundary","reason":"active","stamp":{"mono":0,"continuous":0,"wall":1700000000}}
+{"schema":1,"synthetic":true,"kind":"key-down","keyCode":0,"text":"a","repeated":false,"sourceTimestampNS":1000000000,"stamp":{"mono":1000000000,"continuous":1000000000,"wall":1700000001}}
+{"schema":1,"synthetic":true,"kind":"key-down","keyCode":1,"text":"s","repeated":false,"sourceTimestampNS":1050000000,"stamp":{"mono":1050000000,"continuous":1050000000,"wall":1700000001.05}}
+{"schema":1,"synthetic":true,"kind":"key-up","keyCode":0,"holdNS":100000000,"sourceTimestampNS":1100000000,"stamp":{"mono":1100000000,"continuous":1100000000,"wall":1700000001.1}}
+{"schema":1,"synthetic":true,"kind":"key-up","keyCode":1,"holdNS":120000000,"sourceTimestampNS":1170000000,"stamp":{"mono":1170000000,"continuous":1170000000,"wall":1700000001.17}}
+{"schema":1,"synthetic":true,"kind":"key-down","keyCode":51,"reason":"correction-key","repeated":false,"stamp":{"mono":1400000000,"continuous":1400000000,"wall":1700000001.4}}
+{"schema":1,"synthetic":true,"kind":"boundary","reason":"excluded-app","stamp":{"mono":1500000000,"continuous":1500000000,"wall":1700000001.5}}
