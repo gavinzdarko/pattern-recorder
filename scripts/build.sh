@@ -6,8 +6,10 @@ export CLANG_MODULE_CACHE_PATH="$PWD/.build/cache"
 export SWIFTPM_MODULECACHE_OVERRIDE="$PWD/.build/cache"
 xcrun swift build -c release --disable-sandbox
 APP="$PWD/dist/Pattern Recorder.app"
+# Recreate generated bundle so old Finder metadata/signatures cannot break repeat builds.
+rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS"
-cp .build/release/PatternRecorder "$APP/Contents/MacOS/PatternRecorder"
+cp -X .build/release/PatternRecorder "$APP/Contents/MacOS/PatternRecorder"
 cat > "$APP/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
