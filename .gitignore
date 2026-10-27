@@ -1,0 +1,14 @@
+.build/
+dist/
+.DS_Store
+*.jsonl
+*.log
+*.zip
+*.export/
+recordings/
+exports/
+.env*
+*.pem
+*.p12
+*.key
+!fixtures/synthetic.jsonl
