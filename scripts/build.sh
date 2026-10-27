@@ -4,7 +4,7 @@ cd "$(dirname "$0")/.."
 if [[ -d /Applications/Xcode.app/Contents/Developer ]]; then export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}"; fi
 export CLANG_MODULE_CACHE_PATH="$PWD/.build/cache"
 export SWIFTPM_MODULECACHE_OVERRIDE="$PWD/.build/cache"
-xcrun swift build -c release --disable-sandbox
+xcrun swift build -c release --product PatternRecorder --disable-sandbox
 PATTERN_RECORDER_DESTINATION="${PATTERN_RECORDER_OUTPUT_DIR:-$PWD/dist}"
 mkdir -p "$PATTERN_RECORDER_DESTINATION"
 APP="$PATTERN_RECORDER_DESTINATION/Pattern Recorder.app"
