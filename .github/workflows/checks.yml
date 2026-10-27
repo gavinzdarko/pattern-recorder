@@ -1,0 +1,14 @@
+name: checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Synthetic tests (never capture input)
+        run: swift test --disable-sandbox
+      - name: App bundle and offline checks
+        if: hashFiles('scripts/check.sh') != ''
+        run: ./scripts/check.sh
